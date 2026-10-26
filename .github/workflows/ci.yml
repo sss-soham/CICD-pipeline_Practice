@@ -37,11 +37,7 @@ jobs:
         with:
           image: ssssoham/cicd-practice
           tags: v1, latest
-<<<<<<< Updated upstream
           registry: docker.io
-=======
-          registry: registry-url.io
->>>>>>> Stashed changes
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
