@@ -38,3 +38,4 @@ jobs:
 
   publish:
     needs: build
+    runs-on: ubuntu-latest
