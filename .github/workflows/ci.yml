@@ -31,6 +31,14 @@ jobs:
 
       - name: Build and test
         run: ./gradlew build
+      
+      - name: Prepare JAR for Docker
+        run: |
+          echo "Generated JAR files:"
+          ls -la build/libs/
+          JAR_FILE=$(find build/libs -maxdepth 1 -name "*.jar" ! -name "*-plain.jar" | head -n 1)
+          test -n "$JAR_FILE" || (echo "No application JAR found" && exit 1)
+          cp "$JAR_FILE" build/libs/app.jar
 
       - uses: mr-smithers-excellent/docker-build-push@v7
         name: Build & push Docker image
