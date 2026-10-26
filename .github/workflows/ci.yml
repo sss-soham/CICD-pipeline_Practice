@@ -39,3 +39,5 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build completed successfully; publish job ran."
